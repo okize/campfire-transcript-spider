@@ -21,3 +21,5 @@ class Timer
       @currentDate().month,
       @currentDate().day
     )
+
+module.exports = Timer
