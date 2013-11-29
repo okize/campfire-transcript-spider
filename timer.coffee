@@ -3,13 +3,7 @@ class Timer
   constructor: (@date) ->
     @moment = require 'moment'
     @startDate = @moment @date
-    @waitTime = 10
-    @days = 7
-
-  currentDate: ->
-    year: @startDate.format('YYYY')
-    month: @startDate.format('MM')
-    day: @startDate.format('DD')
+    @days = 1
 
   tick: ->
     @startDate.subtract('days', 1)
@@ -17,9 +11,9 @@ class Timer
 
   getDate: ->
     date = new Array(
-      @currentDate().year,
-      @currentDate().month,
-      @currentDate().day
+      @startDate.format('YYYY'),
+      @startDate.format('MM'),
+      @startDate.format('DD')
     )
 
 module.exports = Timer
