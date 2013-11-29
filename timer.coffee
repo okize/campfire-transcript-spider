@@ -1,9 +1,9 @@
 class Timer
 
-  constructor: (@startDate, @interval) ->
+  constructor: (@startDate, @countOfDays) ->
     @moment = require 'moment'
     @date = if @startDate then @moment @startDate else @moment()
-    @days = @interval
+    @days = @countOfDays
 
   tick: ->
     @date.subtract('days', 1)
