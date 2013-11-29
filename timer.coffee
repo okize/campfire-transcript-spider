@@ -1,19 +1,19 @@
 class Timer
 
-  constructor: (@date) ->
+  constructor: (@startDate, @interval) ->
     @moment = require 'moment'
-    @startDate = @moment @date
-    @days = 1
+    @date = if @startDate then @moment @startDate else @moment()
+    @days = @interval
 
   tick: ->
-    @startDate.subtract('days', 1)
+    @date.subtract('days', 1)
     @days--
 
   getDate: ->
     date = new Array(
-      @startDate.format('YYYY'),
-      @startDate.format('MM'),
-      @startDate.format('DD')
+      @date.format('YYYY'),
+      @date.format('MM'),
+      @date.format('DD')
     )
 
 module.exports = Timer
