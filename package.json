@@ -6,7 +6,7 @@
   "dependencies": {
     "moment": "2.4.x",
     "request": "2.27.x",
-    "twix": "~0.3.0"
+    "twix": "0.3.x"
   },
   "devDependencies": {},
   "scripts": {},
