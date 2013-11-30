@@ -4,14 +4,14 @@
 class Range
 
   constructor: (@startDate, @endDate) ->
-    @moment = require 'moment'
-    @twix = require 'twix'
-    @start = @moment @startDate
-    @end = if @endDate then @moment @endDate else @moment()
+    moment = require 'moment'
+    twix = require 'twix'
+    @start = moment @startDate
+    @end = if @endDate then moment @endDate else moment()
     @dayCount = @start.twix(@end).length 'days'
-    @range = @_getArray()
+    return @_getRange()
 
-  _getArray: ->
+  _getRange: ->
     arr = []
     date = @start
     i = 0
