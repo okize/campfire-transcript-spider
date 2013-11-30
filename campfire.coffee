@@ -14,14 +14,11 @@ class CampfireConfig
         pass: 'x'
         sendImmediately: false
 
-  get: (date, host, room) ->
+  get: (date, host, room, cb) ->
     request = require 'request'
     @options.uri = "https://#{host}.campfirenow.com/room/#{room}/transcript/#{date[0]}/#{date[1]}/#{date[2]}.json"
-    # request @options, (err, resp, body) ->
-    #   return err if err
-    #   return foo =
-    #     'resp': resp
-    #     'body': body
+    request @options, (err, resp, body) ->
+      return cb(err, resp, body)
 
 class Campfire
   instance = null
