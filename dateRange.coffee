@@ -3,17 +3,17 @@
 # @endDate is the day to stop counting (leave blank for today)
 class Range
 
-  constructor: (startDate, endDate) ->
+  constructor: (@startDate, @endDate) ->
     @moment = require 'moment'
     @twix = require 'twix'
-    @startDate = @moment startDate
-    @endDate = if endDate then @moment endDate else @moment()
-    @dayCount = @startDate.twix(@endDate).length 'days'
+    @start = @moment @startDate
+    @end = if @endDate then @moment @endDate else @moment()
+    @dayCount = @start.twix(@end).length 'days'
     @range = @_getArray()
 
   _getArray: ->
     arr = []
-    date = @startDate
+    date = @start
     i = 0
     while i <= @dayCount
       arr.push @_getFormattedDate date
