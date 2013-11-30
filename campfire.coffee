@@ -3,7 +3,7 @@
 # @date is an array [Y, M, D] that contains the date of the transcript being requested
 # @host is the sub-domain of campfire host (ie. sample in 'sample.cam')
 # @room is the campfire room number
-class CampfireConfig
+class Campfire
 
   constructor: (@config) ->
     @options =
@@ -20,10 +20,10 @@ class CampfireConfig
     request @options, (err, resp, body) ->
       return cb(err, resp, body)
 
-class Campfire
+class Bootstrap
   instance = null
 
   @setConfig: (config) ->
-    instance ?= new CampfireConfig(config)
+    instance ?= new Campfire(config)
 
-module.exports = Campfire
+module.exports = Bootstrap
