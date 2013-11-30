@@ -1,7 +1,6 @@
 class Campfire
 
   constructor: (@config, @date) ->
-    @fs = require 'fs'
     @request = require 'request'
     @json = ''
     @options =
@@ -16,6 +15,5 @@ class Campfire
   getJson: ->
     @request @options, (err, resp, body) ->
       return err if err
-      console.log body
 
 module.exports = Campfire
