@@ -1,5 +1,4 @@
 {
   "auth": "campfire authentication token",
   "identity": "user-agent header meant to identify your application",
-  "room": "campfire room number"
 }
