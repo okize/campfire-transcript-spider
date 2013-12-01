@@ -1,19 +1,15 @@
 # save
 class Save
 
-  constructor: (@data, @date) ->
+  constructor: ->
+
+  @toDisk: (data, date, cb) ->
     fs = require 'fs'
     path = require 'path'
     dir = './data'
-    filename = @getFilename @date
+    filename = "#{date[0]}#{date[1]}#{date[2]}.json"
+    fs.writeFile path.join(dir, filename), data, (err) ->
+      throw err if err
+      return cb "saved #{filename} to disk..."
 
-  _getFilename: (date) ->
-    return "#{date[0]}#{date[1]}#{date[2]}.json"
-
-class Bootstrap
-  instance = null
-
-  @setConfig: (data) ->
-    instance ?= new Save(data)
-
-module.exports = Bootstrap
+module.exports = Save
