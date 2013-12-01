@@ -8,7 +8,7 @@ host = ''
 room = ''
 delay = 10000
 
-dates = new Range '11/27/2013', ''
+dates = new Range '', ''
 transcript = new Campfire config
 
 getTranscript = (day) ->
