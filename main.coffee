@@ -4,11 +4,12 @@ Range = require './dateRange.coffee'
 Save = require './save.coffee'
 config = require './config.json'
 
-host = ''
-room = ''
-delay = 10000
+host = config.campfireHost
+room = config.campfireRoomId
+delay = config.delayBetweenApiRequests
 
-dates = new Range '', ''
+dates = new Range config.startDate, config.endDate
+
 transcript = new Campfire config
 
 getTranscript = (day) ->
