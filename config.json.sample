@@ -1,4 +1,9 @@
 {
   "auth": "campfire authentication token",
-  "identity": "user-agent header meant to identify your application",
+  "identity": "user-agent header meant to identify your application"
+  "campfireHost": "campfire subdomain ('example' in example.campfirenow.com)",
+  "campfireRoomId": "campfire room id",
+  "startDate": "1/1/2013",
+  "endDate": "2/1/2013",
+  "delayBetweenApiRequests": 10000
 }
