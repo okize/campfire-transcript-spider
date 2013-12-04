@@ -1,8 +1,6 @@
 # save
 class Save
 
-  constructor: ->
-
   @toDisk: (data, date, cb) ->
     fs = require 'fs'
     path = require 'path'
