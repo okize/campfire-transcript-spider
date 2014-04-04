@@ -1,6 +1,7 @@
 {
   "name": "campfire-transcript-spider",
   "version": "0.0.1",
+  "private": true,
   "description": "Node app for retrieving transcripts from a campfire room for arbitrary date lengths",
   "main": "index.js",
   "dependencies": {
@@ -14,10 +15,6 @@
     "type": "git",
     "url": "https://github.com/okize/campfire-transcript-spider.git"
   },
-  "keywords": [
-    "campfire",
-    "transcript"
-  ],
   "author": "Morgan Wigmanich",
   "license": "MIT",
   "bugs": {
